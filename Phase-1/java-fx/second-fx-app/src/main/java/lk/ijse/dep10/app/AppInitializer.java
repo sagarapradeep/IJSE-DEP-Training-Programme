@@ -62,9 +62,9 @@ public class AppInitializer extends Application {
 //        primaryStage.show();
 //        primaryStage.centerOnScreen();
 
-//        hBoxDemo();
+        hBoxDemo();
 //        vBoxDemo();
-        gridPaneDemo();
+//        gridPaneDemo();
 
     }
 
@@ -141,5 +141,7 @@ public class AppInitializer extends Application {
         stage.show();
         stage.centerOnScreen();
     }
+
+
 
 }
