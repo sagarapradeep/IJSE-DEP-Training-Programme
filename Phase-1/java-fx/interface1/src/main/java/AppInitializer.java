@@ -5,7 +5,13 @@ import javafx.geometry.Orientation;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontPosture;
+import javafx.scene.text.FontWeight;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class AppInitializer extends Application {
@@ -25,6 +31,10 @@ public class AppInitializer extends Application {
     public void gridPane(String[] fistWindowButtonSet, String[] commonButtonSet) {      //done
 
         Button[] btnArray = mainPanelButtonInitializer(fistWindowButtonSet);
+        Text text = new Text();
+        text.setText("Java FX Containers");
+
+
 
         btnArray[0].setOnAction(event -> {
             anchorPane(commonButtonSet);
@@ -47,14 +57,24 @@ public class AppInitializer extends Application {
         btnArray[6].setOnAction(event -> {
             vBox(commonButtonSet);
         });
+        text.setFont(Font.font("verdana", FontWeight.BOLD, FontPosture.ITALIC, 20));
+
         GridPane gridPane = new GridPane();     //create grid pane container
-        gridPane.add(btnArray[0], 0, 0);
-        gridPane.add(btnArray[1], 0, 1);
-        gridPane.add(btnArray[2], 0, 2);
-        gridPane.add(btnArray[3], 0, 3);
-        gridPane.add(btnArray[4], 0, 4);
-        gridPane.add(btnArray[5], 0, 5);
-        gridPane.add(btnArray[6], 0, 6);
+        gridPane.add(text,0,0);
+        btnArray[0].setStyle("-fx-background-color: Red");
+        gridPane.add(btnArray[0], 0, 1);
+        btnArray[1].setStyle("-fx-background-color: Orange");
+        gridPane.add(btnArray[1], 0, 2);
+        btnArray[2].setStyle("-fx-background-color: Yellow");
+        gridPane.add(btnArray[2], 0, 3);
+        btnArray[3].setStyle("-fx-background-color: Green");
+        gridPane.add(btnArray[3], 0, 4);
+        btnArray[4].setStyle("-fx-background-color: Blue");
+        gridPane.add(btnArray[4], 0, 5);
+        btnArray[5].setStyle("-fx-background-color: Indigo");
+        gridPane.add(btnArray[5], 0, 6);
+        btnArray[6].setStyle("-fx-background-color: Purple");
+        gridPane.add(btnArray[6], 0, 7);
         gridPane.setVgap(20);
         gridPane.setPadding(new Insets(20, 50, 20, 50));
 
@@ -62,9 +82,10 @@ public class AppInitializer extends Application {
             GridPane.setHalignment(btnArray[i], HPos.CENTER);
         }
 
-        Scene scene1 = new Scene(gridPane);
+        Scene scene = new Scene(gridPane);
+        scene.setFill(Color.YELLOWGREEN);
 
-        stage("Interface 1", scene1);
+        stage("Interface 1", scene);
     }
 
     public void anchorPane(String[] commonButtonSet) {      //done
@@ -188,7 +209,7 @@ public class AppInitializer extends Application {
         stage.setTitle(title);      //set title
 
         stage.setScene(scene);
-        stage.setResizable(false);          //disable resizing option
+        stage.setResizable(true);          //disable resizing option
 
         stage.sizeToScene();        //create stage size as scene size
         stage.show();                       //show stage
