@@ -37,7 +37,7 @@ public class AppInitializer extends Application {
         lblTitle.setTextFill(Color.NAVY);
         lblTitle.setPadding(new Insets(20, 40, 20, 30));
 
-        Label validateId = new Label("Invalid Id");                         //labels for validation
+        Label validateId = new Label("Invalid Id (Correct form S***)");                         //labels for validation
         validateId.setTextFill(Color.RED);
         validateId.setVisible(false);
         Label validateName = new Label("Invalid Name");
@@ -58,22 +58,22 @@ public class AppInitializer extends Application {
 
         Label lblId = new Label("ID");          //define labels for name,id
         lblId.setPadding(new Insets(10));
-        lblId.setFont(new Font("Ubuntu",20));
+        lblId.setFont(Font.font("Ubuntu",FontWeight.BOLD,20));
         GridPane.setHalignment(lblId,HPos.RIGHT);
 
         Label lblName = new Label("Name");
+        lblName.setFont(Font.font("Ubuntu",FontWeight.BOLD,20));
         lblName.setPadding(new Insets(10));
-        lblName.setFont(new Font("Ubuntu",20));
         GridPane.setHalignment(lblName,HPos.RIGHT);
 
         Label lblNIC = new Label("NIC");
+        lblNIC.setFont(Font.font("Ubuntu",FontWeight.BOLD,20));
         lblNIC.setPadding(new Insets(10));
-        lblNIC.setFont(new Font("Ubuntu",20));
         GridPane.setHalignment(lblNIC,HPos.RIGHT);
 
         Label lblCntNum = new Label("Contact Number");
+        lblCntNum.setFont(Font.font("Ubuntu",FontWeight.BOLD,20));
         lblCntNum.setPadding(new Insets(10));
-        lblCntNum.setFont(new Font("Ubuntu",20));
         GridPane.setHalignment(lblCntNum,HPos.RIGHT);
 
         gridPane.add(lblId, 0, 1);                  //place labels for name, id
@@ -127,11 +127,14 @@ public class AppInitializer extends Application {
         gridPane.getColumnConstraints().add(column2);
 
         Button btnValidate = new Button("Validate");        //set and position validate button
+        btnValidate.setBackground(Background.fill(Color.NAVY));
+        btnValidate.setFont(Font.font("Ubuntu",FontWeight.BOLD,16));
+        btnValidate.setTextFill(Color.WHEAT);
         btnValidate.setPadding(new Insets(10));
         btnValidate.setDefaultButton(true);
-        GridPane.setHalignment(btnValidate,HPos.RIGHT);
+        GridPane.setHalignment(btnValidate,HPos.CENTER);
 
-        gridPane.add(btnValidate,0,10);
+        gridPane.add(btnValidate,0,10,2,10);
 
         btnValidate.setOnAction(event ->
         {
@@ -143,19 +146,22 @@ public class AppInitializer extends Application {
                 validateId.setVisible(true);
                 txtId.selectAll();
             }
+            else validateId.setVisible(false);
             if(!(nicValidation(nic))){
                 validateNIC.setVisible(true);
                 txtNIC.selectAll();
             }
+            else validateNIC.setVisible(false);
             if (!(nameValidate(name))) {
                 validateName.setVisible(true);
                 txtName.selectAll();
             }
+            else validateName.setVisible(false);
             if (!(contactNumberValidate(contactNum))) {
                 validateContact.setVisible(true);
                 txtCntNum.selectAll();
-
             }
+            else validateContact.setVisible(false);
 
         });
 
@@ -178,7 +184,7 @@ public class AppInitializer extends Application {
     }
 
     public boolean idValidation(String id) {
-        if (id.length() == 0) {
+        if (id.length() == 0||id.length()!=4) {
             return false;
         }
 

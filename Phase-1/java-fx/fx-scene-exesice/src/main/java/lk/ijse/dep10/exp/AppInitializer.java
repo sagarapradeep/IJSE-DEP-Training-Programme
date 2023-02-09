@@ -10,6 +10,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
@@ -84,6 +85,8 @@ public class AppInitializer extends Application {
 
         Label lbl = new Label("Hi i'm moving");
         lbl.setVisible(false);
+
+        StackPane stackPane = new StackPane(lblGreen);
 
         AnchorPane anchorPane = new AnchorPane(lbl);
         anchorPane.setPrefHeight(400);
