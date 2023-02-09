@@ -4,6 +4,7 @@ import javafx.geometry.Pos;
 import javafx.scene.Cursor;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Slider;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseButton;
@@ -16,6 +17,8 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 public class AppInitializer extends Application {
+    private double mouseX=0;
+    private double mouseY=0;
 
     public static void main(String[] args) {
         launch(args);
@@ -65,6 +68,12 @@ public class AppInitializer extends Application {
 
         HBox hBox = new HBox(btnMinimize, btnExit);
 
+        /*Slider*/
+        Slider slider = new Slider(0,100,30);
+        slider.setBlockIncrement(10);
+        slider.setMajorTickUnit(20);
+        slider.setShowTickLabels(true);
+        slider.setBackground(Background.fill(Color.LIMEGREEN));
 
 
 
@@ -79,7 +88,7 @@ public class AppInitializer extends Application {
         img.setPreserveRatio(true);
 
 
-        AnchorPane root = new AnchorPane(img,hBox);
+        AnchorPane root = new AnchorPane(img,hBox,slider);
 
         /*Image anchor*/
         AnchorPane.setTopAnchor(img, 0.0);
@@ -93,11 +102,36 @@ public class AppInitializer extends Application {
         AnchorPane.setLeftAnchor(hBox, 300.0);
         AnchorPane.setRightAnchor(hBox, 0.0);
 
+        /*Slider anchor*/
+        AnchorPane.setTopAnchor(slider, 15.0);
+        AnchorPane.setBottomAnchor(slider, 100.0);
+        AnchorPane.setLeftAnchor(slider, 100.0);
+        AnchorPane.setRightAnchor(slider, 100.0);
+
+        /*Listner for slider*/
+        slider.valueProperty().addListener((value,previous,current)->{
+            System.out.println(current);
+        });
+
+
+
         /*Create undecorated window move*/
+
+        root.setOnMouseClicked(event ->{
+            mouseX = event.getX();
+            mouseY = event.getY();
+
+        });
+        root.setOnMouseReleased(event ->{
+            root.setCursor(Cursor.DEFAULT);
+
+        });
+
         root.setOnMouseDragged(event ->{
             if(event.getButton()== MouseButton.PRIMARY) {
-                primaryStage.setX(event.getScreenX());
-                primaryStage.setY(event.getScreenY());
+                primaryStage.setX(event.getScreenX()+mouseX);
+                primaryStage.setY(( event.getScreenY()+mouseY));
+                root.setCursor(Cursor.CROSSHAIR);
             }});
 
 
