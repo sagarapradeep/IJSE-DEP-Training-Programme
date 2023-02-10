@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.dep10.app.controller.MainFormController">
+   <children>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="100.0" layoutY="44.0" text="Modal Windows" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <VBox alignment="CENTER" layoutX="220.0" layoutY="129.0" spacing="20.0" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="100.0">
+         <children>
+            <Button fx:id="btnNormalWindow" alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#btnNormalWindowOnAction" text="Normal Window" />
+            <Button fx:id="btnModalWindow1" alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#btnModalWindow1OnAction" text="Modal Window 1" />
+            <Button fx:id="btnModalWindow2" alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#btnModalWindow2OnAction" text="Modal Window 2" />
+            <Button fx:id="btnOpenDialog" alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#btnOpenDialogOnAction" text="Open Dialog" />
+            <Button fx:id="btnSaveDialog" alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#btnSaveDialogOnAction" text="Save Dialog" />
+            <Button fx:id="btnCreateUSer" alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#btnCreateUserOnAction" text="Create User" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
