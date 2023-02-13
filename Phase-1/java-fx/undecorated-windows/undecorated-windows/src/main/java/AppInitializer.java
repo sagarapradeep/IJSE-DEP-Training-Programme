@@ -153,8 +153,8 @@ public class AppInitializer extends Application {
 
         primaryStage.setScene(mainScene);
 
-//        primaryStage.initStyle(StageStyle.UNDECORATED);
-        primaryStage.initStyle(StageStyle.TRANSPARENT);
+        primaryStage.initStyle(StageStyle.UNDECORATED);
+    //        primaryStage.initStyle(StageStyle.TRANSPARENT);
 
         primaryStage.setTitle("Under Corated Window");
         primaryStage.sizeToScene();

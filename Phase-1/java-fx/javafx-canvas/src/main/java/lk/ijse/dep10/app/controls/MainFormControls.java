@@ -1,7 +1,9 @@
 package lk.ijse.dep10.app.controls;
 
+import javafx.event.ActionEvent;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.control.ColorPicker;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
@@ -10,6 +12,8 @@ import javafx.scene.text.Font;
 
 public class MainFormControls {
     public Canvas cnvMain;
+    public ColorPicker clrStroke;
+    public ColorPicker clrFill;
 
     double x1;
     double width;
@@ -80,4 +84,15 @@ public class MainFormControls {
 
         gp.strokeRect(x1, y1, width, height);
     }
+
+    public void clrFillOnAction(ActionEvent actionEvent) {
+        GraphicsContext gc = cnvMain.getGraphicsContext2D();
+        gc.setFill(clrFill.getValue());
+    }
+
+    public void clrStrokeOnAction(ActionEvent actionEvent) {
+        GraphicsContext gc = cnvMain.getGraphicsContext2D();
+        gc.setFill(clrStroke.getValue());
+    }
 }
+

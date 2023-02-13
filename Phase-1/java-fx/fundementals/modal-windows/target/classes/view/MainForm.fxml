@@ -13,7 +13,7 @@
             <Font size="30.0" />
          </font>
       </Label>
-      <VBox alignment="CENTER" layoutX="220.0" layoutY="129.0" spacing="20.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="100.0">
+      <VBox alignment="CENTER" layoutX="220.0" layoutY="129.0" spacing="20.0" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="100.0">
          <children>
             <Button fx:id="btnNormalWindow" alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#btnNormalWindowOnAction" text="Normal Window" />
             <Button fx:id="btnModalWindow1" alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#btnModalWindow1OnAction" text="Modal Window 1" />
