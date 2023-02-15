@@ -1,0 +1,89 @@
+/*!*#btnRemove {*!*/
+/*!*    -fx-background-color: #9d624d;*!*/
+/*!*    -fx-font-size: 12px;*!*/
+/*!*    -fx-font-weight: 700px;*!*/
+/*!*    -fx-font-style: italic;*!*/
+
+/*!*    !*-fx-background-radius: 100%;*!*!*/
+/*!*    -fx-background-radius: 2px;*!*/
+/*!*    -fx-border-color: red;*!*/
+/*!*    -fx-border-width: 3px;*!*/
+/*!*    -fx-border-style: dotted;*!*/
+
+/*!*}*!*/
+
+/*.button {*/
+/*    -fx-background-color: #9d624d;*/
+/*    -fx-font-size: 12px;*/
+/*    -fx-font-weight: 700px;*/
+/*    -fx-font-style: italic;*/
+
+/*    !*-fx-background-radius: 100%;*!*/
+/*    -fx-background-radius: 2px;*/
+/*    -fx-border-color: red;*/
+/*    -fx-border-width: 3px;*/
+/*    -fx-border-style: dotted;*/
+
+/*}*/
+/*.label{*/
+/*    -fx-background-color: #d8ecf3;*/
+/*}*/
+
+/*.text-field{*/
+/*    -fx-background-color: #efefbe;*/
+/*}*/
+/*.list-view{*/
+/*    -fx-background-color: #dcfcdc;*/
+/*}*/
+
+/*.button:hover{*/
+/*    -fx-background-color: grey;*/
+/*}*/
+/*.button:focused{*/
+/*    -fx-background-color: black;*/
+/*}*/
+
+#btnRemove,#btnDelete {
+    -fx-background-color: red;
+
+}
+
+
+#btnRemove,#btnDelete:hover {
+    -fx-background-color: #da7474;
+    /*-fx-cursor: hand;*/
+
+}
+#lstNames {
+    -fx-font-size: 16px;
+}
+
+#btnNew {
+    -fx-background-color: green;
+    -fx-text-fill: white;
+}
+#btnNew:hover {
+    -fx-background-color: rgba(0, 128, 0, 0.82);
+
+}
+
+#btnSave {
+    -fx-background-color: #3333ee;
+    -fx-text-fill: white;
+}
+#btnSave:hover {
+    -fx-background-color: #7b7bd0;
+}
+
+.invalid {
+    //<-css class
+    -fx-border-width: 2px;
+    -fx-border-color: red;
+    -fx-border-radius: 5px;
+
+    /*-fx-text-box-border: #ea0d0d;*/
+    /*-fx-focus-color: #ec0909;*/
+
+
+}
+

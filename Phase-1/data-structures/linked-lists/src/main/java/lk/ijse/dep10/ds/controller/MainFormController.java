@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TextInputDialog;
+import lk.ijse.dep10.ds.utile.SinglyLinkedList;
 
 
 import java.util.ArrayList;
@@ -14,7 +15,7 @@ import java.util.Optional;
 
 public class MainFormController {
 
-    private LinkedList numbers = new LinkedList();
+    private SinglyLinkedList numbers = new SinglyLinkedList();
 
     @FXML
     private Button btnAdd;
@@ -88,7 +89,7 @@ public class MainFormController {
     @FXML
     void btnRemoveOnAction(ActionEvent event) {
         TextInputDialog prompt = new TextInputDialog();
-        prompt.setHeaderText("Enter object to remove");
+        prompt.setHeaderText("Enter index to remove");
         Optional<String> optInput = prompt.showAndWait();           //wrap up using Optional
         if(optInput.isEmpty()||optInput.get().isBlank()) {
 
@@ -100,7 +101,7 @@ public class MainFormController {
 //            System.out.println("Element not in the list");
 //            return;
 //        }
-        numbers.remove(input);
+        numbers.remove(Integer.parseInt(input));
 
 
     }
