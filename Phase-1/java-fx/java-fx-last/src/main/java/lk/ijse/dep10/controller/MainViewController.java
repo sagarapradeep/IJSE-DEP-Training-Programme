@@ -15,6 +15,7 @@ import java.net.URL;
 
 public class MainViewController {
 
+    public Button btnListViewExersice;
     @FXML
     private Button btnComboBox;
 
@@ -62,4 +63,21 @@ public class MainViewController {
 
     }
 
+    public void btnListViewExersiceOnAction(ActionEvent actionEvent) throws IOException {
+        URL fxmlFile = this.getClass().getResource("/view/ListViewExersice.fxml");
+        FXMLLoader fxmlLoader = new FXMLLoader(fxmlFile);
+        AnchorPane root = fxmlLoader.load();
+
+
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+
+        stage.setTitle("List View Exersice");
+        stage.initModality(Modality.WINDOW_MODAL);
+        stage.initOwner(btnListViewExersice.getScene().getWindow());
+
+        stage.show();
+        stage.centerOnScreen();
+
+    }
 }

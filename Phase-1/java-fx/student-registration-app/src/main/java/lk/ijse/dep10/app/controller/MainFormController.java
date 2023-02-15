@@ -46,7 +46,7 @@ public class MainFormController {
         btnRemoveModules.setDisable(true);
 
 
-        /*Set listner to contact numbers list view to edit them*/
+        /*Set listener to contact numbers list view to edit them*/
         lstContactList.getSelectionModel().selectedItemProperty().addListener((value,previous,current)->{
             if (current == null) {
                 btnRemove.setDisable(true);
@@ -62,7 +62,7 @@ public class MainFormController {
 
         });
 
-        /*Set lisner to summary list to display student details summary*/
+        /*Set listener to summary list to display student details summary*/
         lstSummary.getSelectionModel().selectedItemProperty().addListener((value,previous,current)->{
             if (current == null) {
                 btnDelete.setDisable(true);
@@ -87,10 +87,14 @@ public class MainFormController {
     public void btnAddOnAction(ActionEvent actionEvent) {
 
         txtName.clear();
-        txtName.requestFocus();
-
         txtId.clear();
         txtContact.clear();
+
+        /*Set default modules*/
+        ObservableList<String> defaultModules = lstModules.getItems();
+        defaultModules.clear();
+        defaultModules.addAll("Java-Fundamentals", "OOP", "Java-FX", "Web Developing", "Mobile App Development", "Data Bases", "Data Structures");
+
         ObservableList<String> contactNumber = lstContactList.getItems();
         contactNumber.clear();
 
@@ -106,7 +110,8 @@ public class MainFormController {
         btnAddModules.setDisable(false);
         lstSelectedModules.setDisable(false);
         lstModules.setDisable(false);
-        
+
+        txtName.requestFocus();
 
         txtId.setText(String.format("S%03d", studentID));       //id set
 
@@ -114,15 +119,11 @@ public class MainFormController {
         txtContact.getStyleClass().remove("invalid");
 
 
-        /*Set default modules*/
-        ObservableList<String> defaultModules = lstModules.getItems();
-        defaultModules.addAll("Java-Fundamentals", "OOP", "Java-FX", "Web Developing", "Mobile App Development", "Data Bases", "Data Structures");
 
     }
 
     /*Add Contact Button*/
     public void btnAddContactOnAction(ActionEvent actionEvent) {
-
 
         String contact = txtContact.getText();
         txtContact.getStyleClass().remove("invalid");

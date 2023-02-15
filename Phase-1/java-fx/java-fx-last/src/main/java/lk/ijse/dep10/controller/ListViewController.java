@@ -28,7 +28,7 @@ public class ListViewController {
     private Button btnRemove;
 
     @FXML
-    private Label lblSelectednName;
+    private Label lblSelectedName;
 
     @FXML
     private ListView<String> lstNames;
@@ -40,12 +40,12 @@ public class ListViewController {
     public void initialize() {
         lstNames.getSelectionModel().selectedItemProperty().addListener((value, previous, current) -> {
             if (current == null) {
-                lblSelectednName.setText("No name has been selected");
+                lblSelectedName.setText("No name has been selected");
                 btnRemove.setDisable(true);
                 return;
             }
 
-            lblSelectednName.setText("Selected Name: " + current);
+            lblSelectedName.setText("Selected Name: " + current);
             btnRemove.setDisable(false);
         });
 
