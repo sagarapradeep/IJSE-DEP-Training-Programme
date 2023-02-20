@@ -40,7 +40,26 @@ public class MainViewController {
 
     }
 
-    public void btncomboBoxOnAction(ActionEvent event) {
+    public void btncomboBoxOnAction(ActionEvent event) throws IOException {
+//        URL fxmlFile = this.getClass().getResource("/view/ComboBoxView.fxml");
+//        FXMLLoader fxmlLoader = new FXMLLoader(fxmlFile);
+//        AnchorPane root = fxmlLoader.load();
+//
+//        Scene scene = new Scene(root);
+
+
+        Stage stage = new Stage();
+//        stage.setScene(scene);
+
+        stage.setScene(new Scene((new FXMLLoader(this.getClass().getResource("/view/ComboBoxView.fxml"))).load()));
+
+        stage.setTitle("Combo Box");
+
+        stage.initModality(Modality.WINDOW_MODAL);
+        stage.initOwner(btncomboBox.getScene().getWindow());
+
+        stage.show();
+        stage.centerOnScreen();
     }
 
     public void btnTableViewOnAction(ActionEvent event) {
