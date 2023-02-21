@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="584.0" prefWidth="821.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.dep10.se.controller.MainSceneController">
+   <children>
+      <VBox layoutX="41.0" layoutY="64.0" spacing="20.0">
+         <children>
+            <HBox alignment="CENTER" spacing="10.0">
+               <children>
+                  <Label alignment="CENTER_RIGHT" minWidth="110.0" text="CODE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtCode" editable="false" onAction="#txtCodeOnAction" prefHeight="34.0" prefWidth="176.0" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" spacing="10.0">
+               <children>
+                  <Label alignment="CENTER_RIGHT" minWidth="110.0" text="Description">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtDescription" onAction="#txtDescriptionOnAction" prefHeight="34.0" prefWidth="176.0" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" spacing="10.0">
+               <children>
+                  <Label alignment="CENTER_RIGHT" minWidth="110.0" text="Buying Price">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtBuyingPrice" onAction="#txtBuyingPriceOnAction" prefHeight="34.0" prefWidth="176.0" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" spacing="10.0">
+               <children>
+                  <Label alignment="CENTER_RIGHT" minWidth="110.0" text="Selling Price">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtSellingPrice" onAction="#txtSellingPriceOnAction" prefHeight="34.0" prefWidth="176.0" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" spacing="10.0">
+               <children>
+                  <Label alignment="CENTER_RIGHT" minWidth="110.0" text="QTY">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtQty" onAction="#txtQtyOnAction" prefHeight="34.0" prefWidth="176.0" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <Button fx:id="btnSave" defaultButton="true" layoutX="54.0" layoutY="333.0" mnemonicParsing="false" onAction="#btnSaveOnAction" prefHeight="28.0" prefWidth="65.0" text="Save" />
+      <Button fx:id="btnNew" layoutX="23.0" layoutY="22.0" mnemonicParsing="false" onAction="#btnNewOnAction" prefHeight="28.0" prefWidth="102.0" text="+ New Item" />
+      <TableView fx:id="tblItems" layoutX="14.0" layoutY="373.0" prefHeight="197.0" prefWidth="807.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="CODE" />
+          <TableColumn prefWidth="119.0" text="DESCRIPTION" />
+            <TableColumn prefWidth="78.0" text="BUYING" />
+            <TableColumn prefWidth="88.0" text="SELLING" />
+            <TableColumn prefWidth="87.0" text="PROFIT" />
+            <TableColumn prefWidth="73.0" text="QTY" />
+            <TableColumn text="TOTAL" />
+            <TableColumn prefWidth="206.0" text="EST.TOTAL PROFIT" />
+        </columns>
+      </TableView>
+      <Label fx:id="lblEstTotalProfit" layoutX="558.0" layoutY="327.0" prefHeight="28.0" prefWidth="168.0" text="Est. Total Profit: 0.00">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
