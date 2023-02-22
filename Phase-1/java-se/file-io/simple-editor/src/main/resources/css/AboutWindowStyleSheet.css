@@ -1,0 +1,13 @@
+#lblHeading {
+    -fx-font-family: Ubuntu;
+    -fx-font-size: 25;
+    -fx-font-weight: bold;
+    -fx-text-fill: darkblue;
+
+}
+#lblVersion{
+    -fx-font-weight: bold;
+}
+#lblCopyRight{
+    -fx-font-weight: bold;
+}

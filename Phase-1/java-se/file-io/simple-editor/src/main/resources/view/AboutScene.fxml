@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@../css/AboutWindowStyleSheet.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.dep10.app.controller.AboutSceneController">
+   <children>
+      <Label fx:id="lblHeading" alignment="CENTER" layoutX="235.0" layoutY="34.0" text="Simple Text Editor" AnchorPane.leftAnchor="135.0" AnchorPane.rightAnchor="135.0" AnchorPane.topAnchor="20.0" />
+      <Label fx:id="lblVersion" alignment="CENTER" layoutX="237.0" layoutY="240.0" prefHeight="16.0" prefWidth="101.0" text="Editor 1.0.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="250.0" />
+      <VBox layoutX="118.0" layoutY="269.0" prefHeight="48.0" prefWidth="365.0" AnchorPane.leftAnchor="117.0" AnchorPane.rightAnchor="117.0" AnchorPane.topAnchor="269.0">
+         <children>
+            <Label alignment="CENTER" maxWidth="500.0" prefHeight="24.0" prefWidth="266.0" text="An open-source text editor for any user.">
+               <font>
+                  <Font size="12.0" />
+               </font></Label>
+            <Label alignment="CENTER" maxWidth="500.0" prefHeight="24.0" prefWidth="266.0" text="forcusing on creating interactive text files">
+               <font>
+                  <Font size="12.0" />
+               </font></Label>
+            <Label alignment="CENTER" layoutX="10.0" layoutY="34.0" maxWidth="500.0" prefHeight="24.0" prefWidth="266.0" text="Date: 22/02/2023">
+               <font>
+                  <Font size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <Label alignment="CENTER" layoutX="220.0" layoutY="338.0" text="Copyright © 2023" AnchorPane.leftAnchor="220.0" AnchorPane.rightAnchor="220.0" />
+      <ImageView fx:id="imgMain" fitHeight="150.0" fitWidth="200.0" layoutX="225.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="225.0" AnchorPane.rightAnchor="225.0" AnchorPane.topAnchor="70.0">
+         <image>
+            <Image url="@../image/analytics.png" />
+         </image>
+      </ImageView>
+   </children>
+   <effect>
+      <ColorAdjust />
+   </effect>
+</AnchorPane>
