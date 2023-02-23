@@ -1,6 +1,6 @@
 #lblHeading {
-    -fx-font-family: Ubuntu;
-    -fx-font-size: 25;
+    -fx-font-family:"Abyssinica SIL";
+    -fx-font-size: 36;
     -fx-font-weight: bold;
     -fx-text-fill: darkblue;
 
@@ -10,4 +10,7 @@
 }
 #lblCopyRight{
     -fx-font-weight: bold;
+}
+#root{
+    -fx-background-color: black;
 }

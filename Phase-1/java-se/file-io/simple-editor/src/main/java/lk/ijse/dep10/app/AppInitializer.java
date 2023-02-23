@@ -32,6 +32,8 @@ public class AppInitializer extends Application {
         Scene scene = new Scene(root);
 
         primaryStage.setScene(scene);
+        primaryStage.setWidth(650);
+        primaryStage.setHeight(450);
         primaryStage.show();
         primaryStage.centerOnScreen();
 

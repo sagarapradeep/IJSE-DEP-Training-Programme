@@ -1,5 +1,8 @@
 package lk.ijse.dep10.app.controller;
 
+
+
+import com.itextpdf.html2pdf.HtmlConverter;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,6 +20,7 @@ import javafx.stage.Stage;
 
 import java.io.*;
 import java.net.URL;
+import java.nio.file.Paths;
 import java.util.Optional;
 
 public class EditorSceneController {
@@ -98,7 +102,7 @@ public class EditorSceneController {
     @FXML
     void mnAboutOnAction(ActionEvent event) throws IOException {
         Stage stage = new Stage();
-        stage.setTitle("Simple Text Editor");
+        stage.setTitle("Feather Pad");
 
         URL fxmlFile = this.getClass().getResource("/view/AboutScene.fxml");
         FXMLLoader fxmlLoader = new FXMLLoader(fxmlFile);
@@ -207,6 +211,12 @@ public class EditorSceneController {
 
     @FXML
     void mnPrintOnAction(ActionEvent event) throws IOException {
+        String HTML = "<h1>Hello</h1>"
+                + "<p>This was created using iText</p>"
+                + "<a href='hmkcode.com'>hmkcode.com</a>";
+
+        HtmlConverter.convertToPdf(HTML, new FileOutputStream("string-to-pdf.pdf"));
+        System.out.println("PDF created");
 
 
 
