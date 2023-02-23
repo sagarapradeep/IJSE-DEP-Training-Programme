@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="124.0" prefWidth="590.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.dep10.malware.controller.SplashSceneController">
+   <children>
+      <ProgressBar fx:id="prg" layoutX="56.0" layoutY="84.0" prefHeight="20.0" prefWidth="487.0" progress="0.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="56.0" AnchorPane.rightAnchor="56.0" />
+      <Label alignment="CENTER" layoutX="159.0" layoutY="34.0" prefHeight="43.0" prefWidth="272.0" text="Welcome to the App" AnchorPane.leftAnchor="159.0" AnchorPane.rightAnchor="159.0">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
