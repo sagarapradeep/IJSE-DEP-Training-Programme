@@ -6,7 +6,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.dep10.app.controller.MainViewController">
    <children>
       <Label alignment="CENTER" layoutX="192.0" layoutY="35.0" text="JAVA Serialization in Action" AnchorPane.leftAnchor="191.0" AnchorPane.rightAnchor="191.0">
@@ -14,10 +13,13 @@
             <Font size="16.0" />
          </font>
       </Label>
-      <VBox alignment="CENTER" layoutX="269.0" layoutY="98.0" spacing="20.0" AnchorPane.leftAnchor="195.0" AnchorPane.rightAnchor="195.0">
+      <VBox alignment="CENTER" layoutX="174.0" layoutY="98.0" prefHeight="156.0" prefWidth="252.0" spacing="20.0" AnchorPane.leftAnchor="174.0" AnchorPane.rightAnchor="174.0">
          <children>
-            <Button fx:id="btnHelloSerialization" mnemonicParsing="false" onAction="#btnHelloSerializationOnAction" text="Hello Serialization" />
-            <Button fx:id="btnManageStudents" mnemonicParsing="false" onAction="#btnManageStudentsOnAction" text="Manage Students" />
+            <Button fx:id="btnHelloSerialization" mnemonicParsing="false" onAction="#btnHelloSerializationOnAction" prefWidth="400.0" text="Hello Serialization" />
+            <Button fx:id="btnManageStudents" mnemonicParsing="false" onAction="#btnManageStudentsOnAction" prefWidth="400.0" text="Manage Students" />
+            <Button fx:id="btnSerializationWithInheritance" layoutX="49.0" layoutY="54.0" mnemonicParsing="false" onAction="#btnSerializationWithInheritanceOnAction" prefWidth="400.0" text="Serialization with Inheritance 1" />
+            <Button fx:id="btnSerializationWithInheritance2" layoutX="10.0" layoutY="98.0" mnemonicParsing="false" onAction="#btnSerializationWithInheritance2OnAction" prefWidth="400.0" text="Serialization with Inheritance 2" />
+            <Button fx:id="btnTransient" layoutX="10.0" layoutY="142.0" mnemonicParsing="false" onAction="#btnTransientOnAction" prefWidth="400.0" text="Transient Keyword" />
          </children>
       </VBox>
    </children>

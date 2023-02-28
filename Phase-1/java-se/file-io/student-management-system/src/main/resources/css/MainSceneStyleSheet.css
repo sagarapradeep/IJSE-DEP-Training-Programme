@@ -1,0 +1,10 @@
+.invalid {
+    -fx-border-color: red;
+}
+
+#lblTitle {
+    -fx-font-family: Ubuntu;
+    -fx-font-size: 20px;
+    -fx-font-weight: bolt;
+
+}

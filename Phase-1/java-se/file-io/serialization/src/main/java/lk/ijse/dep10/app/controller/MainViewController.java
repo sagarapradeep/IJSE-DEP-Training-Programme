@@ -1,5 +1,4 @@
 package lk.ijse.dep10.app.controller;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,6 +10,9 @@ import java.io.IOException;
 
 public class MainViewController {
 
+    public Button btnSerializationWithInheritance;
+    public Button btnSerializationWithInheritance2;
+    public Button btnTransient;
     @FXML
     private Button btnHelloSerialization;
 
@@ -19,6 +21,10 @@ public class MainViewController {
 
     Stage stgHello;
     Stage stgManageStudent;
+    Stage stgInheritance;
+    Stage stgInheritance2;
+
+    Stage stgTransient;
 
     @FXML
     void btnHelloSerializationOnAction(ActionEvent event) throws IOException {
@@ -50,4 +56,47 @@ public class MainViewController {
 
     }
 
+    public void btnSerializationWithInheritanceOnAction(ActionEvent actionEvent) throws IOException {
+        if(stgInheritance!=null)return;
+
+        stgInheritance=new Stage();
+        stgInheritance.setScene(new Scene(new FXMLLoader(this.getClass().getResource
+                ("/view/InheritanceView.fxml")).load()));
+
+        stgInheritance.setTitle("Inheritance");
+
+        stgInheritance.show();
+        stgInheritance.centerOnScreen();
+
+
+
+    }
+
+    public void btnSerializationWithInheritance2OnAction(ActionEvent actionEvent) throws IOException {
+        if(stgInheritance2!=null)return;
+
+        stgInheritance2=new Stage();
+        stgInheritance2.setScene(new Scene(new FXMLLoader(this.getClass().getResource
+                ("/view/InheritanceView2.fxml")).load()));
+
+        stgInheritance2.setTitle("Inheritance");
+
+        stgInheritance2.show();
+        stgInheritance2.centerOnScreen();
+    }
+
+    public void btnTransientOnAction(ActionEvent actionEvent) throws IOException {
+        if(stgTransient!=null)return;
+
+        stgTransient=new Stage();
+        stgTransient.setScene(new Scene(new FXMLLoader(this.getClass().getResource
+                ("/view/TransientView.fxml")).load()));
+
+        stgTransient.setTitle("Transient");
+
+        stgTransient.show();
+        stgTransient.setMaximized(true);
+        stgTransient.centerOnScreen();
+        stgTransient.setOnCloseRequest(e->stgTransient = null);
+    }
 }
