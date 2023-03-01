@@ -1,18 +1,30 @@
 package lk.ijse.dep10.app.model.transients;
 
+import javafx.scene.control.Button;
+
 import java.io.Serializable;
 
 public class Employee implements Serializable {
     private String id;
-    private transient PersonalInfo employeeInfo;
-    private transient  PersonalInfo spouseInfo;
+    private  PersonalInfo employeeInfo;
+    private  PersonalInfo spouseInfo;
     private Status status;
+
+    private transient Button btnDelete;
 
     public Employee(String id, PersonalInfo employeeInfo, PersonalInfo spouseInfo, Status status) {
         this.id = id;
         this.employeeInfo = employeeInfo;
         this.spouseInfo = spouseInfo;
         this.status = status;
+    }
+
+    public Employee(String id, PersonalInfo employeeInfo, PersonalInfo spouseInfo, Status status, Button btnDelete) {
+        this.id = id;
+        this.employeeInfo = employeeInfo;
+        this.spouseInfo = spouseInfo;
+        this.status = status;
+        this.btnDelete = btnDelete;
     }
 
     public Employee() {
@@ -61,5 +73,13 @@ public class Employee implements Serializable {
 
     public void setStatus(Status status) {
         this.status = status;
+    }
+
+    public Button getBtnDelete() {
+        return btnDelete;
+    }
+
+    public void setBtnDelete(Button btnDelete) {
+        this.btnDelete = btnDelete;
     }
 }

@@ -1,5 +1,6 @@
 package lk.ijse.dep10.app.controller;
 
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -13,6 +14,7 @@ import lk.ijse.dep10.app.model.transients.Status;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Optional;
 
 public class TransientViewController {
 
@@ -78,6 +80,8 @@ public class TransientViewController {
         tblEmpDetails.getColumns().get(0).setCellValueFactory(new PropertyValueFactory<>("id"));
         tblEmpDetails.getColumns().get(1).setCellValueFactory(new PropertyValueFactory<>("employeeName"));
         tblEmpDetails.getColumns().get(2).setCellValueFactory(new PropertyValueFactory<>("spouseName"));
+        tblEmpDetails.getColumns().get(3).setCellValueFactory(new PropertyValueFactory<>("btnDelete"));
+
 
         /*selection listners*/
         lstEmpContacts.getSelectionModel().selectedItemProperty().addListener((value,old,current)->{
@@ -97,7 +101,34 @@ public class TransientViewController {
 
         });
 
+        /*Copy from file to app*/
 
+        if(employeeDataBase==null||employeeDataBase.length()==0)return;
+        try {
+            FileInputStream fis = new FileInputStream(employeeDataBase);
+            ObjectInputStream ois = new ObjectInputStream(fis);
+            employeeList = (ArrayList<Employee>) ois.readObject();
+
+            FileOutputStream fos = new FileOutputStream(employeeDataBase);
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+
+            ObservableList<Employee> employeeObservableList=tblEmpDetails.getItems();
+            for (Employee employee : employeeList) {
+                Button btn = new Button("DELETE");
+
+                employee.setBtnDelete(btn);
+                employeeObservableList.add(employee);
+            }
+            oos.close();
+            ois.close();
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            new Alert(Alert.AlertType.ERROR, "Cannot Load!");
+            return;
+
+        }
 
 
         btnSpRemove.setDisable(true);
@@ -116,6 +147,8 @@ public class TransientViewController {
         txtSpId.clear();
         txtSpContact.clear();
         txtSpName.clear();
+        lstSpContacts.getItems().clear();
+        lstEmpContacts.getItems().clear();
 
 
         /*Clear list boxes*/
@@ -201,8 +234,15 @@ public class TransientViewController {
             spouseInfo = new PersonalInfo(spouseName, spouseContacts);
 
         }
+        Button btnRemove = new Button("DELETE");
+        Employee employee = new Employee(id, employeeInfo, spouseInfo, status, btnRemove);
 
-        Employee employee = new Employee(id, employeeInfo, spouseInfo, status);
+        btnRemove.setOnAction(actionEvent -> {
+            tblEmpDetails.getItems().remove(employee);
+            employeeList.remove(employee);
+
+        });
+
         employeeList.add(employee);
         FileOutputStream fos = null;
         ObjectOutputStream oos= null;
@@ -219,10 +259,7 @@ public class TransientViewController {
             employeeList.remove(employee);
 
         }
-
-
-
-
+        btnNew.fire();
     }
 
     private boolean isValid() {
@@ -262,7 +299,27 @@ public class TransientViewController {
 
     @FXML
     void btnDeleteOnAction(ActionEvent event) {
+        Optional<ButtonType> optional = new Alert(Alert.AlertType.CONFIRMATION,
+                "Do you want to delete selected Employee?", ButtonType.NO, ButtonType.YES).showAndWait();
+        if(optional.isEmpty()||optional.get()==ButtonType.NO)return;
 
+        Employee selectedEmployee = tblEmpDetails.getSelectionModel().getSelectedItem();
+        tblEmpDetails.getItems().remove(selectedEmployee);
+        employeeList.remove(selectedEmployee);
+        tblEmpDetails.getSelectionModel().clearSelection();
+
+        /*write change into file*/
+        FileOutputStream fos = null;
+        try {
+            fos = new FileOutputStream(employeeDataBase);
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+            oos.writeObject(employeeList);
+
+            oos.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+            new Alert(Alert.AlertType.ERROR, "Couldn't save changes!").show();
+        }
 
     }
 }

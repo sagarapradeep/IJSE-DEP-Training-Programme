@@ -13,6 +13,7 @@ public class MainViewController {
     public Button btnSerializationWithInheritance;
     public Button btnSerializationWithInheritance2;
     public Button btnTransient;
+    public Button btnSerialVersion;
     @FXML
     private Button btnHelloSerialization;
 
@@ -25,6 +26,8 @@ public class MainViewController {
     Stage stgInheritance2;
 
     Stage stgTransient;
+
+    Stage stgSerializeVersionUID;
 
     @FXML
     void btnHelloSerializationOnAction(ActionEvent event) throws IOException {
@@ -98,5 +101,21 @@ public class MainViewController {
         stgTransient.setMaximized(true);
         stgTransient.centerOnScreen();
         stgTransient.setOnCloseRequest(e->stgTransient = null);
+    }
+
+    public void btnSerialVersionOnAction(ActionEvent actionEvent) throws IOException {
+        if(stgSerializeVersionUID!=null)return;
+
+        stgSerializeVersionUID=new Stage();
+        stgSerializeVersionUID.setScene(new Scene(new FXMLLoader(this.getClass().getResource
+                ("/view/SerialVersionUIDView.fxml")).load()));
+
+        stgSerializeVersionUID.setTitle("Serial Version UID");
+        stgSerializeVersionUID.sizeToScene();
+
+        stgSerializeVersionUID.show();
+//        stgSerializeVersionUID.setMaximized(true);
+        stgSerializeVersionUID.centerOnScreen();
+        stgSerializeVersionUID.setOnCloseRequest(e->stgSerializeVersionUID = null);
     }
 }
