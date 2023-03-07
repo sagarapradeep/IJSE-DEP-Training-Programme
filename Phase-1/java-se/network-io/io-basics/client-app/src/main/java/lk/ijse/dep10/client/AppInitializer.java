@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class AppInitializer {
     public static void main(String[] args) throws IOException {
-        Socket socket = new Socket("192.168.8.131", 5050);
+        Socket socket = new Socket("192.168.8.101", 5050);
         OutputStream os = socket.getOutputStream();
         Scanner scanner = new Scanner(System.in);
 

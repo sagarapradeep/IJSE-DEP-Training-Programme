@@ -18,8 +18,8 @@ import java.util.ArrayList;
 public class ChatViewController {
 
     public TextArea txtChatHistory;
-    @FXML
-    private ListView<String> lstMessages;
+
+
 
     @FXML
     private ListView<String> lstUsers;

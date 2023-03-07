@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="root" prefHeight="726.0" prefWidth="729.0" stylesheets="@../css/MainSceneStyleSheet.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.dep10.app.controller.MainSceneController">
+<AnchorPane fx:id="root" prefHeight="726.0" prefWidth="729.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.dep10.app.controller.MainSceneController">
    <children>
       <Button fx:id="btnNew" layoutX="15.0" layoutY="123.0" mnemonicParsing="false" onAction="#btnNewOnAction" text="+ New Student">
          <font>

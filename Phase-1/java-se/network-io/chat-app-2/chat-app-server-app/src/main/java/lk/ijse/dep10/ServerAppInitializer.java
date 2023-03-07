@@ -86,6 +86,7 @@ public class ServerAppInitializer {
 
     }
 
+
     private static void broadCastChatHistory() {
         for (Socket socket : localSocketList) {
             new Thread(()->{
