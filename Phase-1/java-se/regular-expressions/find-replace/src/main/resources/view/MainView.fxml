@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="671.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.dep10.app.controller.MainViewController">
+   <children>
+      <TextArea fx:id="txtEditor" layoutX="14.0" layoutY="92.0" prefHeight="303.0" prefWidth="95.0" text="Regular expressions originated in 1951, when mathematician Stephen Cole Kleene described regular languages using his mathematical notation called regular events.[4][5] These arose in theoretical computer science, in the subfields of automata theory (models of computation) and the description and classification of formal languages. Other early implementations of pattern matching include the SNOBOL language, which did not use regular expressions, but instead its own pattern matching constructs.&#10;&#10;Regular expressions entered popular use from 1968 in two uses: pattern matching in a text editor[6] and lexical analysis in a compiler.[7] Among the first appearances of regular expressions in program form was when Ken Thompson built Kleene's notation into the editor QED as a means to match patterns in text files.[6][8][9][10] For speed, Thompson implemented regular expression matching by just-in-time compilation (JIT) to IBM 7094 code on the Compatible Time-Sharing System, an important early example of JIT compilation.[11] He later added this capability to the Unix editor ed, which eventually led to the popular search tool grep's use of regular expressions (&quot;grep&quot; is a word derived from the command for regular expression searching in the ed editor: g/re/p meaning &quot;Global search for Regular Expression and Print matching lines&quot;).[12] Around the same time when Thompson developed QED, a group of researchers including Douglas T. Ross implemented a tool based on regular expressions that is used for lexical analysis in compiler design.[7]&#10;&#10;Many variations of these original forms of regular expressions were used in Unix[10] programs at Bell Labs in the 1970s, including vi, lex, sed, AWK, and expr, and in other programs such as Emacs (which has its own, incompatible syntax and behavior). Regexes were subsequently adopted by a wide range of programs, with these early forms standardized in the POSIX.2 standard in 1992.&#10;&#10;In the 1980s, the more complicated regexes arose in Perl, which originally derived from a regex library written by Henry Spencer (1986), who later wrote an implementation of Advanced Regular Expressions for Tcl.[13] The Tcl library is a hybrid NFA/DFA implementation with improved performance characteristics. Software projects that have adopted Spencer's Tcl regular expression implementation include PostgreSQL.[14] Perl later expanded on Spencer's original library to add many new features.[15] Part of the effort in the design of Raku (formerly named Perl 6) is to improve Perl's regex integration, and to increase their scope and capabilities to allow the definition of parsing expression grammars.[16] The result is a mini-language called Raku rules, which are used to define Raku grammar as well as provide a tool to programmers in the language. These rules maintain existing features of Perl 5.x regexes, but also allow BNF-style definition of a recursive descent parser via sub-rules.&#10;&#10;The use of regexes in structured information standards for document and database modeling started in the 1960s and expanded in the 1980s when industry standards like ISO SGML (precursored by ANSI &quot;GCA 101-1983&quot;) consolidated. The kernel of the structure specification language standards consists of regexes. Its use is evident in the DTD element group syntax. Prior to the use of regular expressions, many search languages allowed simple wildcards, for example &quot;*&quot; to match any sequence of characters, and &quot;?&quot; to match a single character. Relics of this can be found today in the glob syntax for filenames, and in the SQL LIKE operator.&#10;&#10;Starting in 1997, Philip Hazel developed PCRE (Perl Compatible Regular Expressions), which attempts to closely mimic Perl's regex functionality and is used by many modern tools including PHP and Apache HTTP Server.[citation needed]&#10;&#10;Today, regexes are widely supported in programming languages, text processing programs (particularly lexers), advanced text editors, and some other programs. Regex support is part of the standard library of many programming languages, including Java and Python, and is built into the syntax of others, including Perl and ECMAScript. Implementations of regex functionality is often called a regex engine, and a number of libraries are available for reuse. In the late 2010s, several companies started to offer hardware, FPGA,[17] GPU[18] implementations of PCRE compatible regex engines that are faster compared to CPU implementations." wrapText="true" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="92.0" />
+      <VBox layoutX="5.0" layoutY="14.0" spacing="10.0">
+         <children>
+            <HBox alignment="CENTER_LEFT" spacing="20.0">
+               <children>
+                  <TextField fx:id="txtFind" prefHeight="30.0" prefWidth="275.0" promptText="Find" />
+                  <Button fx:id="btnDown" mnemonicParsing="false" onAction="#btnDownOnAction" prefWidth="60.0" text="Down" />
+                  <Button fx:id="btnUp" mnemonicParsing="false" onAction="#btnUpOnAction" prefWidth="60.0" text="Up" />
+                  <CheckBox fx:id="chkMatchCase" mnemonicParsing="false" onAction="#chkMatchCaseOnAction" text="Match Case" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" spacing="20.0">
+               <children>
+                  <TextField fx:id="txtReplace" prefHeight="30.0" prefWidth="275.0" promptText="Replace Text" />
+                  <Button fx:id="btnReplace" mnemonicParsing="false" onAction="#btnReplaceOnAction" prefWidth="95.0" text="Replace" />
+                  <Button fx:id="btnReplaceAll" mnemonicParsing="false" onAction="#btnReplaceAllOnAction" prefWidth="95.0" text="Replace All" />
+                  <Label fx:id="lblNumOfSelection" prefHeight="16.0" prefWidth="130.0" text="Result: " />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
