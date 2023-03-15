@@ -49,7 +49,12 @@ public class MainSceneController implements Serializable{
 
 
     private File fileDesktop = new File(new File(System.getProperty("user.home")), "Desktop");
-    private File studentFile = new File(fileDesktop, "Student.ijse");
+
+    {
+        File studentFile = new File(fileDesktop, "Student.ijse");
+        System.out.println("File initialized");
+
+    }
     private File studentIdsFile = new File(fileDesktop, "StudentIds.ijse");
 
 

@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import lk.ijse.dep10.app.controller.util.SearchResult;
 
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -40,10 +41,15 @@ public class MainViewController {
     private int pos = 0;
 
     public void initialize() {
-
+        chkMatchCase.setSelected(true);
         txtFind.requestFocus();
         txtFind.textProperty().addListener((value,previous,current)->{
+            if (txtFind.getText().isEmpty()||txtFind.getText().isBlank()) {
+                lblNumOfSelection.setText("Result: 0");
 
+                return;
+            }
+            lblNumOfSelection.setText("Result: 0");
             findResultCount();
 
 
@@ -60,20 +66,25 @@ public class MainViewController {
         searchResults.clear();
         pos = 0;
 
-        Pattern pattern = Pattern.compile(txtFind.getText());
+        Pattern pattern;
+        if (!chkMatchCase.isSelected()) {
+            pattern = Pattern.compile(txtFind.getText(), Pattern.CASE_INSENSITIVE);
+        }
+        else {
+            pattern = Pattern.compile(txtFind.getText());
+
+        }
         Matcher matcher = pattern.matcher(txtEditor.getText());
 
+
         while (matcher.find()) {
-            System.out.println("While");
             int start = matcher.start();
             int end = matcher.end();
             SearchResult result = new SearchResult(start, end);
             searchResults.add(result);
         }
-        System.out.println(searchResults.size());
-        lblNumOfSelection.setText("Result: " + searchResults.size());
 
-        select();
+        lblNumOfSelection.setText("Result: " + searchResults.size());
 
 
 
@@ -81,20 +92,34 @@ public class MainViewController {
 
     private void select() {
         if(searchResults.isEmpty()) return;
-        SearchResult searchResult = searchResults.get(pos);
+        SearchResult searchResult = searchResults.get(pos-1);
         txtEditor.selectRange(searchResult.getStart(), searchResult.getEnd());
-        lblNumOfSelection.setText("Result: " + pos + 1);
+        lblNumOfSelection.setText("Result: " + (pos));
     }
 
     @FXML
     void btnDownOnAction(ActionEvent event) {
         ++pos;
-        if (pos == searchResults.size()) {
+        if (pos == searchResults.size()+1) {
             pos = -1;
             return;
         }
+        if(pos==0) ++pos;
         select();
 
+
+
+    }
+    @FXML
+    void btnUpOnAction(ActionEvent event) {
+
+        --pos;
+        System.out.println(pos);
+        if (pos <= 0) {
+            pos = searchResults.size()+1;
+            return;
+        }
+        select();
 
 
     }
@@ -102,25 +127,29 @@ public class MainViewController {
     @FXML
     void btnReplaceAllOnAction(ActionEvent event) {
 
+        if(txtReplace.getText().isEmpty()) return;
+
+        String replaceAllText = txtEditor.getText();
+        replaceAllText = replaceAllText.replaceAll(txtFind.getText(), txtReplace.getText());
+        txtEditor.setText(replaceAllText);
+
     }
 
     @FXML
     void btnReplaceOnAction(ActionEvent event) {
+        if(txtReplace.getText().isEmpty()) return;
+        String replacedText = txtEditor.getText();
+        replacedText = replacedText.replaceFirst(txtFind.getText(), txtReplace.getText());
+
+        txtEditor.setText(replacedText);
 
     }
 
     @FXML
-    void btnUpOnAction(ActionEvent event) {
-        --pos;
-        if (pos < 0) {
-            pos = searchResults.size();
-            return;
-        }
-        select();
 
-
-    }
 
     public void chkMatchCaseOnAction(ActionEvent actionEvent) {
+        System.out.println(chkMatchCase.isSelected());
+
     }
 }

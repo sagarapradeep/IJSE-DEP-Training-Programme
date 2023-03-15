@@ -8,15 +8,16 @@ public class Demo4 {
 
 
         String someText = "My Nic is: 123456789V, her nic is 123411111V";
-        someText=someText.replaceFirst("\\d{9}[vV]", "123");
+//        someText=someText.replaceFirst("\\d{9}[vV]", "123");
+        someText=someText.replaceFirst("456", "123");
         System.out.println(someText);
 
-        someText = someText.replaceAll("\\d{9}[vV]", "xxx-xxx-xxx");
-        System.out.println(someText);
-
-        String someText2 = "I want to split in to words this senetetnce";
-        String[] split = someText2.split("\\b");
-        System.out.println(Arrays.toString(split));
+//        someText = someText.replaceAll("\\d{9}[vV]", "xxx-xxx-xxx");
+//        System.out.println(someText);
+//
+//        String someText2 = "I want to split in to words this senetetnce";
+//        String[] split = someText2.split("\\b");
+//        System.out.println(Arrays.toString(split));
 
 
 

@@ -5,8 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bc1e671f-9ec1-4c0a-a01c-0e00311e7997" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../find-replace/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../jdbc/exersice-1/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../file-io/student-management-system/src/main/java/lk/ijse/dep10/app/controller/MainSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../file-io/student-management-system/src/main/java/lk/ijse/dep10/app/controller/MainSceneController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../find-replace/src/main/java/lk/ijse/dep10/app/controller/MainViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../find-replace/src/main/java/lk/ijse/dep10/app/controller/MainViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../find-replace/src/main/resources/view/MainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../find-replace/src/main/resources/view/MainView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../find-replace/target/classes/lk/ijse/dep10/app/controller/MainViewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../find-replace/target/classes/lk/ijse/dep10/app/controller/MainViewController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../find-replace/target/classes/view/MainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../find-replace/target/classes/view/MainView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/dep10/regexp/Demo4.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/dep10/regexp/Demo4.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/lk/ijse/dep10/regexp/Demo4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/lk/ijse/dep10/regexp/Demo4.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +51,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/home/sagara/Documents/IJSE-DEP-10/Phase-1/java-se/regular-expressions/regex-basics",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -57,7 +65,7 @@
       <recent name="lk.ijse.dep10.regexp" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Demo5">
+  <component name="RunManager" selected="Application.Demo4">
     <configuration name="Demo1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="lk.ijse.dep10.regexp.Demo1" />
       <module name="regexp-basics" />
@@ -123,23 +131,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="regexp-basics" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="regexp-basics" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Demo5" />
         <item itemvalue="Application.Demo4" />
+        <item itemvalue="Application.Demo5" />
         <item itemvalue="Application.Domo3" />
         <item itemvalue="Application.Demo2" />
         <item itemvalue="Application.Demo1" />
@@ -155,6 +150,8 @@
       <option name="presentableId" value="Default" />
       <updated>1678341516277</updated>
       <workItem from="1678341517512" duration="9557000" />
+      <workItem from="1678601052284" duration="1721000" />
+      <workItem from="1678808066540" duration="3905000" />
     </task>
     <servers />
   </component>
