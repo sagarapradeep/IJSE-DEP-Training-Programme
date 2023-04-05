@@ -1,0 +1,22 @@
+.invalid {
+    -fx-border-color: red;
+    -fx-border-width: 2px;
+}
+
+#btnSave {
+    -fx-background-color: #42bd42;
+
+
+}
+
+#btnRemove{
+    -fx-background-color: #e34848;
+}
+#btnNewStudent{
+    -fx-background-color: #12d212;
+}
+
+
+.button{
+    -fx-background-radius: 4px;
+}

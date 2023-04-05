@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="458.0" prefWidth="600.0" stylesheets="@../css/LoginViewStyleSheet.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.dep10.assignment02.controller.AdminSignUpViewController">
+   <children>
+      <Label fx:id="lblMain4" alignment="CENTER" layoutX="282.0" layoutY="36.0" style="-fx-font-family: ubuntu; -fx-font-weight: bold; -fx-text-fill: darkblue;" text="Admin Signup" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <VBox alignment="CENTER" layoutX="64.0" layoutY="109.0" spacing="16.0" AnchorPane.leftAnchor="120.0" AnchorPane.rightAnchor="120.0">
+         <children>
+            <VBox alignment="CENTER" spacing="5.0">
+               <children>
+                  <Label text="Full name" />
+                  <TextField fx:id="txtFullName" alignment="CENTER" onAction="#txtFullNameOnAction" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" spacing="5.0">
+               <children>
+                  <Label text="User Name" />
+                  <TextField fx:id="txtUserName" alignment="CENTER" onAction="#txtUserNameOnAction" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" spacing="5.0">
+               <children>
+                  <Label text="Password" />
+                  <PasswordField fx:id="pswPassword" alignment="CENTER" onAction="#pswPasswordOnAction" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" spacing="5.0">
+               <children>
+                  <Label text="Re-enter Password" />
+                  <PasswordField fx:id="pswRePassword" alignment="CENTER" onAction="#pswRePasswordOnAction" />
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+      <Button fx:id="btnCreateAdmin" layoutX="251.0" layoutY="363.0" mnemonicParsing="false" onAction="#btnCreateAdminOnAction" text="CREATE ADMIN" />
+      <Label fx:id="lblDateAndTime" layoutX="14.0" layoutY="14.0" prefHeight="16.0" prefWidth="200.0" text="Label" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="10.0" />
+   </children>
+</AnchorPane>

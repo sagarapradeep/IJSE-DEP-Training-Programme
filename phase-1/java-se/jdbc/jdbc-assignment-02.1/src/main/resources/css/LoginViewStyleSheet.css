@@ -1,0 +1,14 @@
+.invalid {
+    -fx-border-color: red;
+    -fx-border-width: 2;
+}
+
+#lblMain1 #lblMain2 #lblMain3 #lblMain4 #lblMain5 {
+    -fx-font-weight: bold;
+    -fx-font-family: Ubuntu;
+    -fx-text-fill: #040442;
+}
+
+.button{
+    -fx-border-radius: 7px;
+}

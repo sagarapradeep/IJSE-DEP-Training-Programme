@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+
+<AnchorPane prefHeight="774.0" prefWidth="639.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.dep10.app.controller.MainViewController">
+   <children>
+      <Button fx:id="btnNewItem" layoutX="14.0" layoutY="21.0" mnemonicParsing="false" onAction="#btnNewItemOnAction" text="+ New Item" />
+      <VBox layoutX="134.0" layoutY="93.0" spacing="10.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0">
+         <children>
+            <HBox alignment="CENTER_LEFT" spacing="10.0">
+               <children>
+                  <Label alignment="CENTER_RIGHT" prefWidth="120.0" text="Item Code:" />
+                  <TextField fx:id="txtItemCode" editable="false" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" spacing="10.0">
+               <children>
+                  <Label alignment="CENTER_RIGHT" prefWidth="120.0" text="Item Description" />
+                  <TextField fx:id="txtItemDescription" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" spacing="10.0">
+               <children>
+                  <Label alignment="CENTER_RIGHT" prefWidth="120.0" text="Buying Price:" />
+                  <TextField fx:id="txtBPrice" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" spacing="10.0">
+               <children>
+                  <Label alignment="CENTER_RIGHT" prefWidth="120.0" text="Selling Price:" />
+                  <TextField fx:id="txtSPrice" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" spacing="10.0">
+               <children>
+                  <Label alignment="CENTER_RIGHT" prefWidth="120.0" text="Profit:" />
+                  <TextField fx:id="txtProfit" editable="false" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" spacing="10.0">
+               <children>
+                  <Label alignment="CENTER_RIGHT" prefWidth="120.0" text="Stock:" />
+                  <TextField fx:id="txtStock" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <VBox layoutX="110.0" layoutY="310.0" spacing="10.0">
+         <children>
+            <HBox>
+               <children>
+                  <Label text="Preview:" />
+                  <ImageView fx:id="imgPreview" fitHeight="150.0" fitWidth="172.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../img/No_Image_Available.jpg" />
+                     </image>
+                  </ImageView>
+                  <VBox spacing="10.0">
+                     <children>
+                        <Button fx:id="btnBrows" mnemonicParsing="false" onAction="#btnBrowsOnAction" prefWidth="90.0" text="Brows" />
+                        <Button fx:id="btnRemove" disable="true" mnemonicParsing="false" onAction="#btnRemoveOnAction" prefWidth="90.0" text="Remove" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox spacing="80.0">
+               <children>
+                  <Button fx:id="btnSave" mnemonicParsing="false" onAction="#btnSaveOnAction" text="Save" />
+                  <Button fx:id="btnDelete" disable="true" mnemonicParsing="false" onAction="#btnDeleteOnACtion" text="Delete" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <TableView fx:id="tblItems" layoutX="62.0" layoutY="521.0" prefHeight="200.0" prefWidth="576.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="Code" />
+          <TableColumn prefWidth="100.0" text="Description" />
+            <TableColumn prefWidth="100.0" text="Buying Price" />
+            <TableColumn prefWidth="100.0" text="Selling Price" />
+            <TableColumn prefWidth="100.0" text="Profit" />
+            <TableColumn prefWidth="100.0" text="Stock" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

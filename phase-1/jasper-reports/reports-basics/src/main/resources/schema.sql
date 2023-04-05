@@ -1,0 +1,17 @@
+CREATE TABLE IF NOT EXISTS Customer
+(
+    id      INT AUTO_INCREMENT PRIMARY KEY,
+    name    VARCHAR(100) NOT NULL,
+    address VARCHAR(300) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS dep10_jasper.Student
+(
+    id      INT PRIMARY KEY AUTO_INCREMENT,
+    name    VARCHAR(100) NOT NULL,
+    address VARCHAR(300) NOT NULL,
+    contact VARCHAR(100) NOT NULL,
+    picture MEDIUMBLOB   NOT NULL
+
+
+);

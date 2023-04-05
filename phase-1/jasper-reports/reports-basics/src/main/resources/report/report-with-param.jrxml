@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.1.final using JasperReports Library version 6.20.1-7584acb244139816654f64e2fd57a00d3e31921e  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report-with-param" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="20378007-acf0-4907-bf45-654b88ae6935">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="username" class="java.lang.String"/>
+	<parameter name="date" class="java.time.LocalDate"/>
+	<parameter name="total" class="java.math.BigDecimal"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="79" uuid="c1a72342-83d0-418a-bea2-df03bd7881ce"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Report With Parameters]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="110" y="0" width="445" height="30" uuid="56a095a5-3698-4fdf-b0f5-f28d0dd21e94"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{username}.isBlank()?"No username provided":$P{username}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="110" y="30" width="445" height="30" uuid="3d0c5e01-47ab-45c1-b695-1c8d88c8f573"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{date}==null?"No date has been provided":$P{date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="110" y="60" width="445" height="30" uuid="1a86112a-87ce-4141-8608-bc2eab0f479a"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{total}==null?"0.00":$P{total}.setScale(2)]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

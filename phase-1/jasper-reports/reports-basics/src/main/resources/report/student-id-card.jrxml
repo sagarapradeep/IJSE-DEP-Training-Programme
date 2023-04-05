@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.1.final using JasperReports Library version 6.20.1-7584acb244139816654f64e2fd57a00d3e31921e  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="student-id-card" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f7bef334-ab41-42b7-881a-3100773a96ac">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DEP10.JASPER-MYSQL-DB"/>
+	<property name="com.jaspersoft.studio.data.sql.tables">
+		<![CDATA[ZGVwMTBfamFzcGVyLmBTdHVkZW50YCBBUyAsMTM5LDUxLGJkMDBjY2JhLWM3MjQtNGRhZC1iYTBk
+LTU4N2EyOGU0ZGIzMzs=]]>
+	</property>
+	<parameter name="id" class="java.lang.Integer"/>
+	<parameter name="barcode" class="java.awt.image.BufferedImage"/>
+	<queryString>
+		<![CDATA[SELECT name,
+	address,
+	contact,
+	picture 
+FROM dep10_jasper.`Student` WHERE  dep10_jasper.`Student`.id =$P{id}]]>
+	</queryString>
+	<field name="name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="name"/>
+		<property name="com.jaspersoft.studio.field.label" value="name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="Student"/>
+	</field>
+	<field name="address" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="address"/>
+		<property name="com.jaspersoft.studio.field.label" value="address"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="Student"/>
+	</field>
+	<field name="contact" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="contact"/>
+		<property name="com.jaspersoft.studio.field.label" value="contact"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="Student"/>
+	</field>
+	<field name="picture" class="byte[]">
+		<property name="com.jaspersoft.studio.field.name" value="picture"/>
+		<property name="com.jaspersoft.studio.field.label" value="picture"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="Student"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="637" splitType="Stretch">
+			<rectangle>
+				<reportElement mode="Opaque" x="0" y="290" width="550" height="270" backcolor="rgba(115, 240, 134, 0.21568628)" uuid="e3c56fcd-b3d1-49bb-868f-ad2a7a4629c9"/>
+			</rectangle>
+			<rectangle>
+				<reportElement key="" mode="Opaque" x="0" y="0" width="550" height="290" backcolor="rgba(171, 247, 161, 0.21176471)" uuid="cbc4a833-87ab-4ee3-9227-c977a125a019"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="150" y="0" width="211" height="46" uuid="7af4699b-df78-4a9a-bf24-be83016f2468"/>
+				<textElement>
+					<font fontName="SansSerif" size="30" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Student ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="130" y="70" width="100" height="30" uuid="46021f93-60c7-48c0-b809-3f91bbad0e9b"/>
+				<textElement textAlignment="Right">
+					<font fontName="SansSerif" size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="130" y="100" width="100" height="30" uuid="e34410c6-8d42-444b-8d81-88e02bf3aeb4"/>
+				<textElement textAlignment="Right">
+					<font fontName="SansSerif" size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Name :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="130" y="130" width="100" height="30" uuid="eaba3db4-69f2-4014-8dd3-d1b004f82def"/>
+				<textElement textAlignment="Right">
+					<font fontName="SansSerif" size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Address :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="130" y="160" width="100" height="30" uuid="579d6b97-8b82-4fff-9a43-71bbd0be0962"/>
+				<textElement textAlignment="Right">
+					<font fontName="SansSerif" size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Contact :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="230" y="70" width="294" height="30" uuid="ec33bdd0-4526-4c4a-98c0-1eb1b50d2de2"/>
+				<textElement>
+					<font fontName="SansSerif" size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[String.format("S-%012d", $P{id})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="230" y="100" width="294" height="30" uuid="09c6cdcf-4962-48f6-aced-3202a09c628a"/>
+				<textElement>
+					<font size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="230" y="130" width="294" height="30" uuid="d9814bad-d125-4207-a2d0-2cc251208484"/>
+				<textElement>
+					<font size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{address}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="230" y="160" width="294" height="30" uuid="92a19fe1-4e13-4a6c-ad40-d09765e29925"/>
+				<textElement>
+					<font size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{contact}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="30" y="20" width="100" height="100" uuid="81179f15-72b1-46ed-9bb7-77277dbafbb4"/>
+				<imageExpression><![CDATA["/home/sagara/Desktop/boy.jpg"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="20" y="310" width="170" height="80" uuid="9e0585bb-9313-46e2-bbd9-1deb5ddec496"/>
+				<imageExpression><![CDATA[$F{picture}]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="20" y="420" width="161" height="102" uuid="d2bc8184-f970-4e5a-810f-b1ec14e39fc8"/>
+				<imageExpression><![CDATA["image/download.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="213" y="420" width="227" height="102" uuid="bbfca33a-6a9f-418c-b15f-855317bec8a6"/>
+				<textElement>
+					<font fontName="&#xA;SansSerif" size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Property of IJSE]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>
